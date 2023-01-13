@@ -3,8 +3,10 @@ Range
 """
 import numpy as np
 
+from .data_checker import DataChecker
 
-class Range:
+
+class Range(DataChecker):
     def __init__(self, data):
         """
             data should be a list of numbers
@@ -14,12 +16,6 @@ class Range:
 
     def __call__(self):
         return self.calculate_range()
-    
-    def data_checker(self, data):
-        if isinstance(data, list):
-            return True
-        else:
-            raise ValueError('data must be a list and contains numbers')
 
     def calculate_range(self):
         self.min = np.min(self.data)

@@ -3,8 +3,10 @@ Mean Absolute of Deviation
 """
 import numpy as np
 
+from .data_checker import DataChecker
 
-class MeanAbsoluteDeviation:
+
+class MeanAbsoluteDeviation(DataChecker):
     def __init__(self, data):
         """
             data should be a list of numbers
@@ -15,12 +17,6 @@ class MeanAbsoluteDeviation:
 
     def __call__(self):
         return self.ad()
-
-    def data_checker(self, data):
-        if isinstance(data, list):
-            return True
-        else:
-            raise ValueError('data must be a list and contains numbers')
 
     def mean(self):
         mean = np.mean(self.data)

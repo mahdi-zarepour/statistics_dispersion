@@ -3,8 +3,10 @@ Variance
 """
 import numpy as np
 
+from .data_checker import DataChecker
 
-class Variance:
+
+class Variance(DataChecker):
     def __init__(self, data):
         """
             data should be a list of numbers
@@ -14,12 +16,6 @@ class Variance:
 
     def __call__(self):
         return self.var()
-    
-    def data_checker(self, data):
-        if isinstance(data, list):
-            return True
-        else:
-            raise ValueError('data must be a list and contains numbers')
 
     def var(self):
         return np.var(self.data)

@@ -3,8 +3,9 @@ Standard Deviation
 """
 import numpy as np
 
+from .data_checker import DataChecker
 
-class StandardDeviation:
+class StandardDeviation(DataChecker):
     def __init__(self, data):
         """
             data should be a list of numbers
@@ -14,12 +15,6 @@ class StandardDeviation:
 
     def __call__(self):
         return self.st()
-    
-    def data_checker(self, data):
-        if isinstance(data, list):
-            return True
-        else:
-            raise ValueError('data must be a list and contains numbers')
 
     def st(self):
         return np.sqrt(np.var(self.data))
