@@ -23,3 +23,8 @@ class CoeificientVariation(DataChecker):
         self.std = StandardDeviation(self.data).st()
         self.cv = (self.std / self.mean) * 100
         return self.cv
+
+
+__all__ = [
+    'CoeificientVariation',
+]

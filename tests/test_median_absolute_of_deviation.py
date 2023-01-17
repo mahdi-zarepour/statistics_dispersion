@@ -10,10 +10,7 @@ class TestMeanAbsoluteDeviation(unittest.TestCase):
 
     def test_data_checker(self):
         self.assertTrue(self.data)
-
-    def test_mean(self):
-        self.assertEqual(self.ad.median(), 5.5)
-
+        
     def test_ad(self):
         self.assertEqual(self.ad.ad(), 2.5)
 

@@ -18,13 +18,9 @@ class MeanAbsoluteDeviation(DataChecker):
     def __call__(self):
         return self.ad()
 
-    def mean(self):
-        mean = np.mean(self.data)
-        return mean
-
     def ad(self):
         abs_sumation = 0
-        mean = self.mean()
+        mean = np.mean(self.data)
         for num in self.data:
             abs_sumation += abs(num - mean)
 

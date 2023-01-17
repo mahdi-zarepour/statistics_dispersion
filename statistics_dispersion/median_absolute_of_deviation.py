@@ -7,12 +7,9 @@ from .mean_absolute_of_deviation import MeanAbsoluteDeviation
 
 
 class MedianAbsoluteDeviation(MeanAbsoluteDeviation):
-    def median(self):
-        return np.median(self.data)
-
     def ad(self):
         abs_sumation = 0
-        median = self.median()
+        median = np.median(self.data)
         for num in self.data:
             abs_sumation += abs(num - median)
 
